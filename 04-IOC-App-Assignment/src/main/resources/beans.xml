@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="userservice" class="in.vishal.beans.UserService" />
+
+	<bean id="pwd" class="in.vishal.beans.PwdService" >
+	    <property name="user" ref="userservice"></property>
+	</bean>
+
+	<bean id="dao" class="in.vishal.beans.UserDAO" >
+	   <property name="pwdservice" ref="pwd"></property>
+	</bean>
+	
+		<bean id="email" class="in.vishal.beans.EmailService" >
+	   <property name="udao" ref="dao"></property>
+	</bean>
+
+
+</beans>
