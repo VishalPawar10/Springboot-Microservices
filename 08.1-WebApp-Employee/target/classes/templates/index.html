@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>Employee List</title>
+		<style>
+			table{
+				margin: 5px;
+				padding: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Employee List</h1>
+		<table border="2px">
+			<thead>
+				<tr>
+					<th>Employee_Id</th>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Gender</th>
+					<th>Country</th>
+					<th>Salary</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="emp : ${emp}">
+					<td th:text="${emp.empId}"></td>
+					<td th:text="${emp.empName}"></td>
+					<td th:text="${emp.empAge}"></td>
+					<td th:text="${emp.empGender}"></td>
+					<td th:text="${emp.empCountry}"></td>
+					<td th:text="${emp.empSalary}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
